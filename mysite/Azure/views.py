@@ -25,6 +25,13 @@ def example_post(request):
 	if request.method == "POST":
 		try:
 			data = request.POST["data"]
+			jsob = json.loads(data)
+
+			index = 0
+			for i in jsob["demo"]:
+				index += 1
+			index = jsob["var"]+str(index)
+
 			return JsonResponse({"log":log})
 		except Exception as e:
 			exc_type, exc_obj, exc_tb = sys.exc_info()
