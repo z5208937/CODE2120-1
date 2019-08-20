@@ -5,4 +5,4 @@ from . import views
 urlpatterns = [
 	path(r'example_get/<str:var_a>/<int:var_b>',  views.example_get),
 	path(r'fib/',views.fib)
-]
+	path(r'add/',views.fib)
