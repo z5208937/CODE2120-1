@@ -63,15 +63,7 @@ def add(request):
 			received = json.loads(data)
 			jsob.update(received)
 
-			print("Printing type of input value")
-			print ("type of number ", type(number))
-			print ("type of number_two ", type(number_two ))
-
-			sum = float(NumberA) + float(NumberB)
-			
-			print(sum)
-
-			return JsonResponse({"fib":numarray})
+			return JsonResponse({"add": NumberA + NumberB})
 		except Exception as e:
 			exc_type, exc_obj, exc_tb = sys.exc_info()
 			other = sys.exc_info()[0].__name__
@@ -80,3 +72,4 @@ def add(request):
 			return JsonResponse({"isError": True, "error":str(e), "errorType":errorType, "function":fname, "line":exc_tb.tb_lineno, "log":log})
 	else:
 		return HttpResponse("<h1>ONLY POST REQUESTS</h1>")
+	
