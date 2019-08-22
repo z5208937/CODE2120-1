@@ -56,7 +56,7 @@ def fib(request):
 
 @csrf_exempt
 def add(request):
-	jsob ={"NumberA": input, "NumberB": input} #Defaults
+	jsob ={"NumberA": 34, "NumberB": 35} #Defaults
 	log = []
 	if request.method == "POST":
 		try:
