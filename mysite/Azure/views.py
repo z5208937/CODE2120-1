@@ -64,7 +64,12 @@ def add(request):
 			received = json.loads(data)
 			jsob.update(received)
 
-			return JsonResponse({"add": NumberA + NumberB})
+			NumberA = int(jsob["NumberA"])
+			NumberB = int(jsob["NumberB"])
+
+			Answer = NumberA + NumberB
+
+			return JsonResponse({"add": Answer})
 		except Exception as e:
 			exc_type, exc_obj, exc_tb = sys.exc_info()
 			other = sys.exc_info()[0].__name__
